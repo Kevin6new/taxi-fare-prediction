@@ -143,7 +143,7 @@ st.markdown("- Please note that the model is optimized for distances between 0 a
 st.info("🔧 This project is a work in progress and may be updated to enhance functionality and user experience.")
 
 # Input form
-st.write("Please type the full address including the pin code and state.")
+st.write("Please type the full address including the pin code and city.")
 
 source_address = st.text_input("Enter your source address:")
 destination_address = st.text_input("Enter your destination address:")
