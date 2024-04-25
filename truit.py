@@ -132,8 +132,11 @@ ordinal_encoder = joblib.load('ordinal_encoder.joblib')
 one_hot_encoder = joblib.load('one_encoder.joblib')
 
 # Streamlit UI
-st.set_page_config(page_title="My Digital Persona", page_icon="🚖", layout='wide')
-st.title("Ride Fare Prediction App")
+st.set_page_config(page_title="Ride Fare Prediction", page_icon="🚖", layout='wide')
+st.title("Ride Fare Prediction")
+st.info("🔧 This project is a work in progress and may be updated to enhance functionality and user experience.")
+st.write("Please type the full address including the pin code and state.")
+
 source_address = st.text_input("Enter your source address:")
 destination_address = st.text_input("Enter your destination address:")
 service_type = st.selectbox("Choose a service type:", ["Lyft", "Uber"])
