@@ -139,8 +139,6 @@ st.write("Please type the full address including the pin code and state.")
 
 source_address = st.text_input("Enter your source address:")
 destination_address = st.text_input("Enter your destination address:")
-if source_address==destination_address:
-    st.error("Source and destination address cannot be the same")
 
 service_type = st.selectbox("Choose a service type:", ["Lyft", "Uber"])
 
@@ -160,6 +158,8 @@ if st.button("Predict Fare"):
         
         if source_coords and destination_coords:
             distance = calculate_road_distance(source_address, destination_address, GOOGLE_MAPS_API_KEY)
+            if source_coords and destination_coords:
+                st.error("Source and destination address cannot be the same")
             if "Error" not in distance:
                 # Extract only the numerical part from distance
                 distance_value = float(re.findall(r"\d+\.\d+", distance)[0])
