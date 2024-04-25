@@ -138,7 +138,11 @@ st.markdown("This app predicts the fare for ridesharing services like Lyft and U
 st.markdown("### Dataset Information:")
 st.markdown("- The dataset used for training this model consists of rideshare data collected in Boston in November and December.")
 st.markdown("- Please note that the model is optimized for distances between 0 and 5 miles.")
+
+# Information box
 st.info("🔧 This project is a work in progress and may be updated to enhance functionality and user experience.")
+
+# Input form
 st.write("Please type the full address including the pin code and state.")
 
 source_address = st.text_input("Enter your source address:")
