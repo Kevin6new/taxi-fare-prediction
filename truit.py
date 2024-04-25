@@ -127,7 +127,7 @@ def calculate_road_distance(start_address, end_address, api_key):
         return "Error: No data available."
 
 # Load model and encoders
-rf_model = joblib.load('random_forest_model.joblib')
+rf_model = joblib.load('xgb_model.joblib')
 ordinal_encoder = joblib.load('ordinal_encoder.joblib')
 one_hot_encoder = joblib.load('one_encoder.joblib')
 
