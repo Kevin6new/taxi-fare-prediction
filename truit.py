@@ -139,6 +139,9 @@ st.write("Please type the full address including the pin code and state.")
 
 source_address = st.text_input("Enter your source address:")
 destination_address = st.text_input("Enter your destination address:")
+if source_address==destination_address:
+    st.error("Source and destination address cannot be the same")
+
 service_type = st.selectbox("Choose a service type:", ["Lyft", "Uber"])
 
 if service_type == 'Lyft':
