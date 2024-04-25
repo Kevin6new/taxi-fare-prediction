@@ -35,7 +35,7 @@ def get_google_directions_route(start_coords, end_coords, api_key):
 def draw_route(polyline_str, start_coords, end_coords):
     route_coordinates = polyline.decode(polyline_str)
     midpoint = [sum(x) / 2 for x in zip(start_coords, end_coords)]
-    route_map = folium.Map(location=midpoint, zoom_start=14.25)
+    route_map = folium.Map(location=midpoint, zoom_start=13)
 
     folium.Marker(start_coords, icon=folium.Icon(color="green"), tooltip="Source").add_to(route_map)
     folium.Marker(end_coords, icon=folium.Icon(color="red"), tooltip="Destination").add_to(route_map)
@@ -158,8 +158,6 @@ if st.button("Predict Fare"):
         
         if source_coords and destination_coords:
             distance = calculate_road_distance(source_address, destination_address, GOOGLE_MAPS_API_KEY)
-            if source_coords and destination_coords:
-                st.error("Source and destination address cannot be the same")
             if "Error" not in distance:
                 # Extract only the numerical part from distance
                 distance_value = float(re.findall(r"\d+\.\d+", distance)[0])
